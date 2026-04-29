@@ -13,6 +13,13 @@ import os
 import sys
 from pathlib import Path
 
+# Force UTF-8 output on Windows to avoid cp1252 UnicodeEncodeError
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[attr-defined]
+    except AttributeError:
+        pass
+
 from colorama import Fore, Style, init as colorama_init
 
 from scanner.file_scanner import scan_path
@@ -43,7 +50,7 @@ def _banner() -> None:
             Fore.CYAN + Style.BRIGHT,
         )
     )
-    print(_colored("  SecretScanner v1.0.0 — Hardcoded Secret Detector\n", Fore.WHITE))
+    print(_colored("  SecretScanner v1.0.0 - Hardcoded Secret Detector\n", Fore.WHITE))
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -76,9 +83,9 @@ def _print_findings(findings: list) -> None:
     if not findings:
         return
 
-    print(_colored(f"\n{'─' * 70}", Fore.WHITE))
+    print(_colored("\n" + "-" * 70, Fore.WHITE))
     print(_colored("  FINDINGS", Fore.RED + Style.BRIGHT))
-    print(_colored(f"{'─' * 70}\n", Fore.WHITE))
+    print(_colored("-" * 70 + "\n", Fore.WHITE))
 
     for f in findings:
         severity = f.get("severity", "MEDIUM")
@@ -100,16 +107,16 @@ def _print_summary(
     report_path: str | None,
 ) -> None:
     count = len(findings)
-    separator = "─" * 70
+    separator = "-" * 70
 
     print(_colored(separator, Fore.GREEN))
 
     if count == 0:
-        print(_colored("  ✔ No secrets found. Your project looks clean!", Fore.GREEN + Style.BRIGHT))
+        print(_colored("  [OK] No secrets found. Your project looks clean!", Fore.GREEN + Style.BRIGHT))
     else:
         print(
             _colored(
-                f"  ⚠  {count} secret(s) found — review them before committing!",
+                f"  [!] {count} secret(s) found - review them before committing!",
                 Fore.RED + Style.BRIGHT,
             )
         )
