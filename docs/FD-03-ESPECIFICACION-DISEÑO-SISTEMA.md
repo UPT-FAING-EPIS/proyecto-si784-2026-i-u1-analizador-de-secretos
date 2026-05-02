@@ -25,7 +25,7 @@ Este documento detalla todos los aspectos técnicos, funcionales y de diseño de
 
 ### 1. Nombre de la Empresa
 
-**Institución Académica:** Universidad Privada del Tecnológico (UPT)  
+**Institución Académica:** Universidad Privada de Tacna (UPT)  
 **Facultad:** FAING - Facultad de Ingeniería  
 **Escuela Profesional:** EPIS - Escuela Profesional de Ingeniería de Sistemas  
 **Código del Proyecto:** SI-784 - Análisis y Diseño de Sistemas (2026-I-U1)
@@ -42,7 +42,7 @@ Crear herramientas de análisis estático de código que permitan a los desarrol
 
 ```
 ┌─────────────────────────────────────────────────┐
-│   UNIVERSIDAD PRIVADA DEL TECNOLÓGICO (UPT)    │
+│   UNIVERSIDAD PRIVADA DEL TACNA (UPT)           │
 └────────────────────┬────────────────────────────┘
                      │
         ┌────────────┴────────────┐
