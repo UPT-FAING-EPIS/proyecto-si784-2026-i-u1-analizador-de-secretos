@@ -28,7 +28,7 @@
 - **Universidad**: Universidad Privada de Tacna
 - **Facultad**: Facultad de Ingeniería
 - **Escuela Profesional**: Ingeniería de Sistemas
-- **Curso**: Base de Datos II
+- **Curso**: CALIDAD Y PRUEBAS DE SOFTWARE
 - **Docente**: Mag. Patrick Cuadros Quiroga
 - **Integrantes**:
   - Zapana Murillo, Kiara Holly (2023976799)
